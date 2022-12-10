@@ -7,9 +7,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class Application {
 
-	private static final String REST_URL="https://www.equifax.com/getScores"; 
+private Map<String,Object> cache= new HashMap<String,Object>();
+private static final String REST_URL="https://www.equifax.com/getScores"
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		//SpringApplication.run(Application.class, args);
 		ConfigurableApplicationContext run = SpringApplication.run(Application.class);
 		
@@ -18,6 +19,12 @@ public class Application {
 		//Changes for HIS-134 
 		run.close();		
 	    
+	}
+	
+	//HIS 301 changes
+	public void loadDataToCache (){
+
+	//logic
 	}
 
 }
